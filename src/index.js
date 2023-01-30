@@ -163,7 +163,7 @@
 // }
 // ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
 
-import React from "react";
+import React, { Children } from "react";
 import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
 import "./index.css"
 
@@ -182,20 +182,23 @@ const secondBook={
 function Booklist(){
     return (
     <section className="bookList">
-     <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}/>
+     <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}>
+        <p>Lorem20</p>
+     </Book>
      <Book  img={secondBook.img} title={secondBook.title} author={secondBook.author}></Book>
     </section>
     );
 }
-const Book=(props)=> //const Book=({img,title,author})=>  -->Another way of Using Props
+const Book=({img,title,author,children})=> //const Book=({img,title,author})=>  -->Another way of Using Props
 {
     // const {img,title,author}=props;-->Another Way of Directly Using Props
-    console.log(props);
+    // console.log(props);
     return (
     <article className="book">
-    <img src={props.img}></img>
-    <h1>{props.title}</h1>
-    <h2>{props.author}</h2>
+    <img src={img}></img>
+    <h1>{title}</h1>
+    <h2>{author}</h2>
+    <h1>{children}</h1>
     </article>
     );
 }
