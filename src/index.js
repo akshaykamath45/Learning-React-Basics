@@ -25,16 +25,30 @@ import ReactDOM from "react-dom";
 //close every element
 //do not create div soup,Don't keep on writing div,use articles/section 
 
+// const Greeting=() =>{
+//     return(
+//      <>
+//         <div onClick=" " className=" ">
+//             <div>
+//                 <h2>Hello People!</h2>
+//         </div>
+            
+//         </div>
+//      </>
+//     )
+// };
+
+//Self Closing-->Creating Multiple Components
 const Greeting=() =>{
     return(
-     <>
-        <div onClick=" " className=" ">
-            <div>
-                <h2>Hello People!</h2>
-        </div>
-            
-        </div>
-     </>
+     <div>
+        <Person></Person>
+        <Message/>
+      
+     </div>
     )
 };
+
+const Person = () => <h2>Akshay Kamath</h2>
+const Message =() => <p>This is my message</p>
 ReactDOM.render(<Greeting></Greeting>,document.getElementById("root"));
