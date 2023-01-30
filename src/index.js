@@ -206,19 +206,67 @@
 
 //Simple List
 
+// import React, { Children } from "react";
+// import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
+// import "./index.css";
+
+// // const name=["john","susan","peter"];//Array with Name
+// // const newNames=name.map((name)=>{
+// //     return <h1>{name}</h1>
+// // });
+// // function Booklist(){
+// //     return<section className="booklist">{newNames}</section>
+// // }
+
+// //To make them unique,we can provide ID with Object Attributes.
+// const books=[
+//     {   
+//         id:1,
+//         img:" https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg",
+//         title :"The Alchemist",
+//         author: "Paulo Coelho",
+//     },
+//     {
+//         id:2,
+//         img:"https://m.media-amazon.com/images/I/61Iz2yy2CKL._AC_UY218_.jpg",
+//         title :"The Monk Who Sold His Ferrari",
+//         author: "Robin Sharma",
+//     },
+//     {
+//         id:3,
+//         img:"https://m.media-amazon.com/images/I/71e9MY-XE9L._AC_UY218_.jpg",
+//         title:"The Blue Umbrella",
+//         author:"Ruskin Bond",
+//     },
+// ];
+// function Booklist(){
+//     return(
+//         <section className="bookList">
+//             {books.map((book) => {
+//                 return <Book book={book}></Book>//No need to write all the props again,props.img,props.title,props.author,Instead use -->book={book}-->while using map function.
+//                 // return <Book key={book.id}{...book}></Book> -->Can use this for unique key,but remember to change props.book to just props in the component.
+//             })}
+//         </section>
+//     )
+// }
+// const Book = (props) =>{
+//     const {img,title,author}=props.book;//Using the Props here from mapped objects
+//     return(
+//         <article className="book">
+//             <img src={img} alt=""></img>
+//             <h1>{title}</h1>
+//             <h2>{author}</h2>
+//         </article> 
+//     )
+// }
+
+// ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
+
+
 import React, { Children } from "react";
 import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
 import "./index.css";
 
-// const name=["john","susan","peter"];//Array with Name
-// const newNames=name.map((name)=>{
-//     return <h1>{name}</h1>
-// });
-// function Booklist(){
-//     return<section className="booklist">{newNames}</section>
-// }
-
-//To make them unique,we can provide ID with Object Attributes.
 const books=[
     {   
         id:1,
@@ -243,21 +291,31 @@ function Booklist(){
     return(
         <section className="bookList">
             {books.map((book) => {
-                return <Book book={book}></Book>//No need to write all the props again,props.img,props.title,props.author,Instead use -->book={book}-->while using map function.
-                // return <Book key={book.id}{...book}></Book> -->Can use this for unique key,but remember to change props.book to just props in the component.
+                // return <Book book={book}></Book>//No need to write all the props again,props.img,props.title,props.author,Instead use -->book={book}-->while using map function.
+                return <Book key={book.id}{...book}></Book> 
             })}
         </section>
     )
 }
-const Book = (props) =>{
-    const {img,title,author}=props.book;//Using the Props here from mapped objects
+const Book = ({img,title,author}) =>{
+    //events
+    //onClick,onMouseOver
+    const clickHandler = (e)=>{
+        // console.log(e);
+        console.log("Hello World");
+    }
+    const complexClickHandler =(author)=>{
+        console.log(author);
+    }
+    //Whenever we use a parameter,use Arrow function.
     return(
-        <article className="book">
+        <article className="book" onMouseOver={()=>console.log(title)}>
             <img src={img} alt=""></img>
-            <h1>{title}</h1>
+            <h1 onClick={()=>console.log(author)}>{title}</h1>
             <h2>{author}</h2>
+            <button onClick={clickHandler}>example</button>
+            <button onClick={()=>complexClickHandler(author)}>complex example</button>
         </article> 
     )
 }
-
 ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
