@@ -53,47 +53,77 @@
 // const Message =() => <p>This is my message</p>
 // ReactDOM.render(<Greeting></Greeting>,document.getElementById("root"));
 
+// import React from "react";
+// import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
+// import "./index.css"
+
+// const Booklist=()=>{
+//     return(
+//         <section className="bookList">
+//             <Book></Book>
+//             <Book></Book>
+//         </section>
+//     );
+// };
+// const Book =()=>{
+//     return(
+//         <article className="book">
+//             <Image></Image>
+//             <Author></Author>
+//             <BookName></BookName>
+//         </article>
+//     );
+// };
+// const Image =()=>{
+//     return(
+//         <img src="https://m.media-amazon.com/images/I/41W-o6xu2bL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" alt="book"></img>
+//     );
+// };
+// // const Author=()=>{
+// //     return( 
+// //     <h2>Darius Foroux</h2>
+// //     );
+   
+// // };
+
+// //Another Option-->Arrow Function Automatically Includes Return,No need to Return.
+
+// //JSX CSS
+// // -->Use 2 Curly Braces-->1 for JSX,1 for CSS Propertires
+// const Author=()=><h2 style={{color :'#671d04',fontsize : "0.75rem"}}>Darius Foroux</h2>
+// const BookName=()=>{
+//     return(
+//     <h1>Do It Today</h1>
+//     );
+// };
+// ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
+
+
+
 import React from "react";
 import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
 import "./index.css"
 
-const Booklist=()=>{
+function Booklist(){
     return(
         <section className="bookList">
             <Book></Book>
-            <Book></Book>
         </section>
     );
-};
-const Book =()=>{
+}
+
+const author= "Paulo Coelho";
+const Book=()=>{
+    const title="The Alchemist";
     return(
         <article className="book">
-            <Image></Image>
-            <Author></Author>
-            <BookName></BookName>
+            <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg" alt=""></img>
+            <h1>{title}</h1>
+            <h2>{author}</h2>
+            <h2>{author.toUpperCase()}</h2>
+            <h2>{6+3}</h2>
         </article>
     );
-};
-const Image =()=>{
-    return(
-        <img src="https://m.media-amazon.com/images/I/41W-o6xu2bL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg" alt="book"></img>
-    );
-};
-// const Author=()=>{
-//     return( 
-//     <h2>Darius Foroux</h2>
-//     );
-   
-// };
+}
 
-//Another Option-->Arrow Function Automatically Includes Return,No need to Return.
-
-//JSX CSS
-// -->Use 2 Curly Braces-->1 for JSX,1 for CSS Propertires
-const Author=()=><h2 style={{color :'#671d04',fontsize : "0.75rem"}}>Darius Foroux</h2>
-const BookName=()=>{
-    return(
-    <h1>Do It Today</h1>
-    );
-};
 ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
