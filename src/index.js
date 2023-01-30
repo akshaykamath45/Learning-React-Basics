@@ -87,7 +87,10 @@ const Image =()=>{
 // };
 
 //Another Option-->Arrow Function Automatically Includes Return,No need to Return.
-const Author=()=><h2>Darius Foroux</h2>
+
+//JSX CSS
+// -->Use 2 Curly Braces-->1 for JSX,1 for CSS Propertires
+const Author=()=><h2 style={{color :'#671d04',fontsize : "0.75rem"}}>Darius Foroux</h2>
 const BookName=()=>{
     return(
     <h1>Do It Today</h1>
