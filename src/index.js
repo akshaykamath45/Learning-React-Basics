@@ -100,30 +100,65 @@
 
 
 
+// import React from "react";
+// import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
+// import "./index.css"
+
+// function Booklist(){
+//     return(
+//         <section className="bookList">
+//             <Book></Book>
+//         </section>
+//     );
+// }
+
+// const author= "Paulo Coelho";
+// const Book=()=>{
+//     const title="The Alchemist";
+//     return(
+//         <article className="book">
+//             <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg" alt=""></img>
+//             <h1>{title}</h1>
+//             <h2>{author}</h2>
+//             <h2>{author.toUpperCase()}</h2>
+//             <h2>{6+3}</h2>
+//         </article>
+//     );
+// }
+
+// ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
+
+//REACT PROPS
 import React from "react";
 import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
 import "./index.css"
 
+const author="Paul Coelho";
+const title="The Alchemist";
+
+const img="https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg"
+
 function Booklist(){
     return(
         <section className="bookList">
-            <Book></Book>
+            <Book price="299" sale="76%" date="31st January" number={22}></Book>
+            <Book price="499"  sale="24%" number="22"></Book>
         </section>
     );
 }
 
-const author= "Paulo Coelho";
-const Book=()=>{
-    const title="The Alchemist";
+const Book=(props)=>{
     return(
         <article className="book">
-            <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg" alt=""></img>
+            <img src={img} alt=" "></img>
             <h1>{title}</h1>
             <h2>{author}</h2>
-            <h2>{author.toUpperCase()}</h2>
-            <h2>{6+3}</h2>
+            <h1>Date of Publishment : {props.date}</h1>
+            <h1>Sale :{props.sale}</h1>
+            <h2>Price : {props.price}</h2>
+            <h2>Number : {props.number}</h2>
+          
         </article>
     );
 }
-
 ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
