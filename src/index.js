@@ -244,7 +244,7 @@ function Booklist(){
         <section className="bookList">
             {books.map((book) => {
                 return <Book book={book}></Book>//No need to write all the props again,props.img,props.title,props.author,Instead use -->book={book}-->while using map function.
-                // return <Book key={book.id}{...book}></Book> -->Can use this for unique key,but remember to change props.book to jus props in the component.
+                // return <Book key={book.id}{...book}></Book> -->Can use this for unique key,but remember to change props.book to just props in the component.
             })}
         </section>
     )
