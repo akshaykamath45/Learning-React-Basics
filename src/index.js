@@ -55,10 +55,11 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css"
 
 const Booklist=()=>{
     return(
-        <section>
+        <section className="bookList">
             <Book></Book>
             <Book></Book>
         </section>
@@ -66,7 +67,7 @@ const Booklist=()=>{
 };
 const Book =()=>{
     return(
-        <article>
+        <article className="book">
             <Image></Image>
             <Author></Author>
             <BookName></BookName>
@@ -86,7 +87,7 @@ const Image =()=>{
 // };
 
 //Another Option-->Arrow Function Automatically Includes Return,No need to Return.
-const Author=()=><h2>Darius Foroux</h2>
+const Author=()=><h1>Darius Foroux</h1>
 const BookName=()=>{
     return(
     <h2>Do It Today</h2>
