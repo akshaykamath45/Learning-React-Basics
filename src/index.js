@@ -129,36 +129,72 @@
 // ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
 
 //REACT PROPS
+// import React from "react";
+// import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
+// import "./index.css"
+
+// const author="Paul Coelho";
+// const title="The Alchemist";
+
+// const img="https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg"
+
+// function Booklist(){
+//     return(
+//         <section className="bookList">
+//             <Book price="299" sale="76%" date="31st January" number={22}></Book>
+//             <Book price="499"  sale="24%" number="22"></Book>
+//         </section>
+//     );
+// }
+
+// const Book=(props)=>{
+//     return(
+//         <article className="book">
+//             <img src={img} alt=" "></img>
+//             <h1>{title}</h1>
+//             <h2>{author}</h2>
+//             <h1>Date of Publishment : {props.date}</h1>
+//             <h1>Sale :{props.sale}</h1>
+//             <h2>Price : {props.price}</h2>
+//             <h2>Number : {props.number}</h2>
+          
+//         </article>
+//     );
+// }
+// ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
+
 import React from "react";
 import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
 import "./index.css"
 
-const author="Paul Coelho";
-const title="The Alchemist";
-
-const img="https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg"
-
-function Booklist(){
-    return(
-        <section className="bookList">
-            <Book price="299" sale="76%" date="31st January" number={22}></Book>
-            <Book price="499"  sale="24%" number="22"></Book>
-        </section>
-    );
+//Using Objects
+const firstBook={
+    img:" https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg",
+    title :"The Alchemist",
+    author: "Paulo Coelho",
+}
+const secondBook={
+    img:"https://m.media-amazon.com/images/I/61Iz2yy2CKL._AC_UY218_.jpg",
+    title :"The Monk Who Sold His Ferrari",
+    author: "Robin Sharma",
 }
 
-const Book=(props)=>{
-    return(
-        <article className="book">
-            <img src={img} alt=" "></img>
-            <h1>{title}</h1>
-            <h2>{author}</h2>
-            <h1>Date of Publishment : {props.date}</h1>
-            <h1>Sale :{props.sale}</h1>
-            <h2>Price : {props.price}</h2>
-            <h2>Number : {props.number}</h2>
-          
-        </article>
+function Booklist(){
+    return (
+    <section className="bookList">
+     <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}/>
+     <Book  img={secondBook.img} title={secondBook.title} author={secondBook.author}></Book>
+    </section>
+    );
+}
+const Book=(props)=> {
+    console.log(props);
+    return (
+    <article className="book">
+    <img src={props.img}></img>
+    <h1>{props.title}</h1>
+    <h2>{props.author}</h2>
+    </article>
     );
 }
 ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
