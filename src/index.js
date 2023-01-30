@@ -19,12 +19,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //Directly using JSX
+
+//div/section/article fragment
+//className instead of class
+//close every element
+//do not create div soup,Don't keep on writing div,use articles/section 
+
 const Greeting=() =>{
     return(
-        <div>
-            <h1>Hello People!</h1> 
-            <h2>Hello World!</h2>
+     <>
+        <div onClick=" " className=" ">
+            <div>
+                <h2>Hello People!</h2>
         </div>
+            
+        </div>
+     </>
     )
 };
 ReactDOM.render(<Greeting></Greeting>,document.getElementById("root"));
