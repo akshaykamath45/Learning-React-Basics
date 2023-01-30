@@ -163,43 +163,59 @@
 // }
 // ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
 
+// import React, { Children } from "react";
+// import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
+// import "./index.css"
+
+// //Using Objects
+// const firstBook={
+//     img:" https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg",
+//     title :"The Alchemist",
+//     author: "Paulo Coelho",
+// }
+// const secondBook={
+//     img:"https://m.media-amazon.com/images/I/61Iz2yy2CKL._AC_UY218_.jpg",
+//     title :"The Monk Who Sold His Ferrari",
+//     author: "Robin Sharma",
+// }
+
+// function Booklist(){
+//     return (
+//     <section className="bookList">
+//      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}>
+//         <p>Lorem20</p>
+//      </Book>
+//      <Book  img={secondBook.img} title={secondBook.title} author={secondBook.author}></Book>
+//     </section>
+//     );
+// }
+// const Book=({img,title,author,children})=> //const Book=({img,title,author})=>  -->Another way of Using Props
+// {
+//     // const {img,title,author}=props;-->Another Way of Directly Using Props
+//     // console.log(props);
+//     return (
+//     <article className="book">
+//     <img src={img}></img>
+//     <h1>{title}</h1>
+//     <h2>{author}</h2>
+//     <h1>{children}</h1>
+//     </article>
+//     );
+// }
+// ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
+
+//Simple List
+
 import React, { Children } from "react";
 import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
-import "./index.css"
+import "./index.css";
 
-//Using Objects
-const firstBook={
-    img:" https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UY218_.jpg",
-    title :"The Alchemist",
-    author: "Paulo Coelho",
-}
-const secondBook={
-    img:"https://m.media-amazon.com/images/I/61Iz2yy2CKL._AC_UY218_.jpg",
-    title :"The Monk Who Sold His Ferrari",
-    author: "Robin Sharma",
-}
-
+const name=["john","susan","peter"];//Array with Name
+const newNames=name.map((name)=>{
+    return <h1>{name}</h1>
+});
 function Booklist(){
-    return (
-    <section className="bookList">
-     <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}>
-        <p>Lorem20</p>
-     </Book>
-     <Book  img={secondBook.img} title={secondBook.title} author={secondBook.author}></Book>
-    </section>
-    );
+    return<section className="booklist">{newNames}</section>
 }
-const Book=({img,title,author,children})=> //const Book=({img,title,author})=>  -->Another way of Using Props
-{
-    // const {img,title,author}=props;-->Another Way of Directly Using Props
-    // console.log(props);
-    return (
-    <article className="book">
-    <img src={img}></img>
-    <h1>{title}</h1>
-    <h2>{author}</h2>
-    <h1>{children}</h1>
-    </article>
-    );
-}
+
 ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
