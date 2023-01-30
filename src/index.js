@@ -54,7 +54,7 @@
 // ReactDOM.render(<Greeting></Greeting>,document.getElementById("root"));
 
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";//Imprtant to use Client while using creatRoot method instead of Direct Render.
 import "./index.css"
 
 const Booklist=()=>{
@@ -87,10 +87,10 @@ const Image =()=>{
 // };
 
 //Another Option-->Arrow Function Automatically Includes Return,No need to Return.
-const Author=()=><h1>Darius Foroux</h1>
+const Author=()=><h2>Darius Foroux</h2>
 const BookName=()=>{
     return(
-    <h2>Do It Today</h2>
+    <h1>Do It Today</h1>
     );
 };
-ReactDOM.render(<Booklist></Booklist>,document.getElementById("root"));
+ReactDOM.createRoot(document.getElementById("root")).render(<Booklist/>);
