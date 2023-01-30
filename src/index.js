@@ -9,12 +9,22 @@
 // }
 
 // ReactDOM.render(<Greeting></Greeting>,document.getElementById("root"));
+// import React from "react";
+// import ReactDOM from "react-dom";
+
+// const Greeting=() =>{
+//     // return React.createElement("h1",{},'Hello World');What ever is included after {} will be included in that div
+//     return React.createElement("div",{},React.createElement("h1",{},"hello peoples"));
+// };
 import React from "react";
 import ReactDOM from "react-dom";
-
+//Directly using JSX
 const Greeting=() =>{
-    // return React.createElement("h1",{},'Hello World');
-    return React.createElement("div",{},React.createElement("h1",{},"hello peoples"))
-}
-
+    return(
+        <div>
+            <h1>Hello People!</h1> 
+            <h2>Hello World!</h2>
+        </div>
+    )
+};
 ReactDOM.render(<Greeting></Greeting>,document.getElementById("root"));
