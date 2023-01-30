@@ -187,7 +187,9 @@ function Booklist(){
     </section>
     );
 }
-const Book=(props)=> {
+const Book=(props)=> //const Book=({img,title,author})=>  -->Another way of Using Props
+{
+    // const {img,title,author}=props;-->Another Way of Directly Using Props
     console.log(props);
     return (
     <article className="book">
